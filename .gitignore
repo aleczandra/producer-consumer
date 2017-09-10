@@ -1,0 +1,11 @@
+# User-specific stuff:
+.idea/
+*.iml
+
+## Plugin-specific files:
+# IntelliJ
+/out/
+
+### project
+target/
+logs/

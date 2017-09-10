@@ -1,0 +1,23 @@
+On Sunday there are more football games. A TV company sends a reported to each game to get live updates into a system and send them back to the studio.
+On arriving at the studio the updates will be placed in a queue before being displayed on the screen by a Teletype.
+This scenario may have many producers, but only one consumer.
+
+Simulate the Producer Consumer Pattern through this scenario.
+
+
+Solution
+
+Reporter is the producer. There can be more reporters. It is associated to a match and receives the queue where it has to right as a parameter.
+Teletype is the consumer. There is only one. It receives the queue from where it has to read.
+
+There is only one queue and it is known by all the reporters and by the teletype. (Singleton Pattern used)
+
+Reporters and teletype are simulated via threads.
+Teletype will run in a while(true) loop and read from the queue.
+Reporter will have a list of updates that for this case will be read from a file.
+
+
+The queue is simulated using a LinkedBlockingQueue. The take() operation used by the teletype will wait till there is something available into the queue.
+
+The system will be exited after a certain amount of time so it doesn't run forever.
+
